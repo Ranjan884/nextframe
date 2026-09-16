@@ -1,13 +1,13 @@
 import React from 'react';
-import { Github, Linkedin, Mail } from 'lucide-react';
+import { Github, Mail } from 'lucide-react';
 
 export const AboutSection: React.FC = () => {
   return (
-    <section id="about" className="py-20 sm:py-28 bg-white border-b border-[#E2E8F0]">
+    <section id="about" className="py-20 sm:py-24 bg-white border-b border-[#E2E8F0]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}
-        <div className="max-w-2xl mb-12 sm:mb-16">
+        <div className="max-w-2xl mb-12 sm:mb-14">
           <span className="text-xs font-semibold text-[#2563EB] tracking-wider uppercase block mb-2">
             About Nextframe
           </span>
@@ -15,7 +15,7 @@ export const AboutSection: React.FC = () => {
             Independent Studio, Direct Collaboration
           </h2>
           <p className="mt-3 text-base text-[#525F7F] leading-relaxed">
-            Nextframe is a two-person creative technology studio founded by Ranjan and Mohmed Sami. We combine software development, 3D modeling, and media production to build clean digital products.
+            Nextframe is a two-person creative technology studio founded by Ranjan and Mohmed Sami. We combine software engineering, UI/UX design systems, and digital product craftsmanship to build clean digital products.
           </p>
         </div>
 
@@ -42,7 +42,7 @@ export const AboutSection: React.FC = () => {
               When you work with Nextframe, you work directly with the two people building your project. There are no project managers, no outsourced contractors, and no generic templates.
             </p>
             <p>
-              Whether you need a responsive web application, interactive game mechanics in Unity, custom 3D hard-surface assets in Blender, or high-paced video editing, we deliver thoughtful work on time.
+              Whether you need a responsive web application, interactive game mechanics in Unity, or intuitive UI/UX design systems, we deliver thoughtful work on time.
             </p>
           </div>
 
@@ -62,13 +62,13 @@ export const AboutSection: React.FC = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
             
             {/* Ranjan Card */}
-            <div className="p-6 sm:p-7 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-xs flex flex-col justify-between">
+            <div className="p-6 sm:p-7 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-xs hover:border-[#93C5FD] hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-out flex flex-col justify-between">
               <div>
                 <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-xl bg-white border border-[#E2E8F0] flex items-center justify-center text-xl font-bold text-[#2563EB] shadow-xs">
+                  <div className="w-14 h-14 rounded-xl bg-white border border-[#E2E8F0] flex items-center justify-center text-xl font-extrabold text-[#2563EB] shadow-2xs">
                     R
                   </div>
-                  <span className="text-xs font-semibold px-2.5 py-1 rounded bg-[#EFF6FF] text-[#2563EB] border border-[#DBEAFE]">
+                  <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-[#EFF6FF] text-[#2563EB] border border-[#DBEAFE]">
                     Co-Founder
                   </span>
                 </div>
@@ -80,22 +80,22 @@ export const AboutSection: React.FC = () => {
                   Web, App &amp; Game Development
                 </p>
 
-                <p className="text-sm text-[#525F7F] leading-relaxed mb-4">
+                <p className="text-sm text-[#525F7F] leading-relaxed mb-5">
                   Focuses on full-stack architecture, responsive frontend applications, TypeScript codebases, and interactive Unity game mechanics. Passionate about clean code, performance, and intuitive user experiences.
                 </p>
 
                 <div className="flex flex-wrap gap-1.5 mb-6">
                   {['Web Development', 'Full-Stack', 'App Development', 'Unity / Game Dev'].map((skill) => (
-                    <span key={skill} className="text-xs px-2 py-0.5 rounded bg-white border border-[#E2E8F0] text-[#475569] font-medium">
+                    <span key={skill} className="text-xs px-2.5 py-1 rounded-md bg-white border border-[#E2E8F0] text-[#475569] font-medium shadow-2xs">
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#E2E8F0] flex items-center gap-3">
+              <div className="pt-4 border-t border-[#E2E8F0] flex items-center gap-2.5">
                 <a
-                  href="https://github.com/nextframe-studio"
+                  href="https://github.com/boby-raj"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-white border border-[#E2E8F0] text-[#64748B] hover:text-[#0F172A] hover:bg-[#F1F5F9] transition-colors"
@@ -104,16 +104,7 @@ export const AboutSection: React.FC = () => {
                   <Github className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-white border border-[#E2E8F0] text-[#64748B] hover:text-[#0F172A] hover:bg-[#F1F5F9] transition-colors"
-                  aria-label="Ranjan on LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-                <a
-                  href="mailto:ranjan@nextframe.studio"
+                  href="mailto:r40993674@gmail.com"
                   className="p-2 rounded-lg bg-white border border-[#E2E8F0] text-[#64748B] hover:text-[#0F172A] hover:bg-[#F1F5F9] transition-colors"
                   aria-label="Email Ranjan"
                 >
@@ -123,13 +114,13 @@ export const AboutSection: React.FC = () => {
             </div>
 
             {/* Mohmed Sami Card */}
-            <div className="p-6 sm:p-7 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-xs flex flex-col justify-between">
+            <div className="p-6 sm:p-7 rounded-2xl bg-[#F8FAFC] border border-[#E2E8F0] shadow-xs hover:border-[#93C5FD] hover:-translate-y-1 hover:shadow-md transition-all duration-300 ease-out flex flex-col justify-between">
               <div>
                 <div className="flex items-start justify-between gap-4 mb-4">
-                  <div className="w-16 h-16 rounded-xl bg-white border border-[#E2E8F0] flex items-center justify-center text-xl font-bold text-[#2563EB] shadow-xs">
+                  <div className="w-14 h-14 rounded-xl bg-white border border-[#E2E8F0] flex items-center justify-center text-xl font-extrabold text-[#2563EB] shadow-2xs">
                     M
                   </div>
-                  <span className="text-xs font-semibold px-2.5 py-1 rounded bg-[#EFF6FF] text-[#2563EB] border border-[#DBEAFE]">
+                  <span className="text-xs font-semibold px-2.5 py-1 rounded-md bg-[#EFF6FF] text-[#2563EB] border border-[#DBEAFE]">
                     Co-Founder
                   </span>
                 </div>
@@ -138,25 +129,25 @@ export const AboutSection: React.FC = () => {
                   Mohmed Sami
                 </h4>
                 <p className="text-xs font-semibold text-[#2563EB] mt-0.5 mb-3">
-                  3D Design, Video Editing &amp; UI/UX
+                  UI/UX Design, Creative Direction &amp; Interface Systems
                 </p>
 
-                <p className="text-sm text-[#525F7F] leading-relaxed mb-4">
-                  Leads visual craft, hard-surface 3D modeling and lighting in Blender, UI design systems, and paced video editing. Dedicated to high-standard aesthetics, pacing, and visual storytelling.
+                <p className="text-sm text-[#525F7F] leading-relaxed mb-5">
+                  Leads visual craft, user experience design systems, interactive prototypes, and typography. Dedicated to high-standard aesthetics, clean layout architecture, and intuitive user experiences.
                 </p>
 
                 <div className="flex flex-wrap gap-1.5 mb-6">
-                  {['2D/3D Design', 'Blender', 'Video Editing', 'UI/UX Design'].map((skill) => (
-                    <span key={skill} className="text-xs px-2 py-0.5 rounded bg-white border border-[#E2E8F0] text-[#475569] font-medium">
+                  {['UI/UX Design', 'Design Systems', 'Interface Systems', 'Interactive Design'].map((skill) => (
+                    <span key={skill} className="text-xs px-2.5 py-1 rounded-md bg-white border border-[#E2E8F0] text-[#475569] font-medium shadow-2xs">
                       {skill}
                     </span>
                   ))}
                 </div>
               </div>
 
-              <div className="pt-4 border-t border-[#E2E8F0] flex items-center gap-3">
+              <div className="pt-4 border-t border-[#E2E8F0] flex items-center gap-2.5">
                 <a
-                  href="https://github.com/nextframe-studio"
+                  href="https://github.com/boby-raj"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="p-2 rounded-lg bg-white border border-[#E2E8F0] text-[#64748B] hover:text-[#0F172A] hover:bg-[#F1F5F9] transition-colors"
@@ -165,16 +156,7 @@ export const AboutSection: React.FC = () => {
                   <Github className="w-4 h-4" />
                 </a>
                 <a
-                  href="https://linkedin.com"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="p-2 rounded-lg bg-white border border-[#E2E8F0] text-[#64748B] hover:text-[#0F172A] hover:bg-[#F1F5F9] transition-colors"
-                  aria-label="Mohmed Sami on LinkedIn"
-                >
-                  <Linkedin className="w-4 h-4" />
-                </a>
-                <a
-                  href="mailto:sami@nextframe.studio"
+                  href="mailto:r40993674@gmail.com"
                   className="p-2 rounded-lg bg-white border border-[#E2E8F0] text-[#64748B] hover:text-[#0F172A] hover:bg-[#F1F5F9] transition-colors"
                   aria-label="Email Mohmed Sami"
                 >

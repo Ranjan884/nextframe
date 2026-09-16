@@ -1,6 +1,6 @@
 import React from 'react';
 import { NextframeLogo } from './NextframeLogo';
-import { ArrowUp, Mail, Linkedin, Github, Lock } from 'lucide-react';
+import { ArrowUp, Mail, Github, Lock } from 'lucide-react';
 
 export const Footer: React.FC = () => {
   const scrollToTop = () => {
@@ -20,8 +20,6 @@ export const Footer: React.FC = () => {
     window.dispatchEvent(new CustomEvent('open-studio-admin'));
   };
 
-  const whatsappUrl = 'https://wa.me/919999999999?text=Hi%20Nextframe%20Studio';
-
   return (
     <footer className="bg-white border-t border-[#E2E8F0] py-14 text-sm text-[#64748B]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +33,7 @@ export const Footer: React.FC = () => {
               Creative Technology Studio
             </p>
             <p className="text-xs text-[#64748B] leading-relaxed max-w-sm">
-              Founded by Ranjan and Mohmed Sami. Building responsive websites, applications, 3D digital assets, and media.
+              Founded by Ranjan and Mohmed Sami. Building responsive websites, applications, UI/UX systems, and media.
             </p>
           </div>
 
@@ -66,46 +64,22 @@ export const Footer: React.FC = () => {
             <ul className="space-y-2 text-xs">
               <li>
                 <a
-                  href="mailto:hello@nextframe.studio"
+                  href="mailto:r40993674@gmail.com"
                   className="hover:text-[#2563EB] transition-colors flex items-center gap-2"
                 >
                   <Mail className="w-3.5 h-3.5 text-[#2563EB]" />
-                  <span>hello@nextframe.studio</span>
+                  <span>r40993674@gmail.com</span>
                 </a>
               </li>
               <li>
                 <a
-                  href={whatsappUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#25D366] transition-colors flex items-center gap-2"
-                >
-                  <span className="w-3.5 h-3.5 rounded-full bg-[#25D366] flex items-center justify-center text-white text-[9px] font-bold">
-                    W
-                  </span>
-                  <span>WhatsApp Chat</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://linkedin.com/company/nextframe-studio"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="hover:text-[#0A66C2] transition-colors flex items-center gap-2"
-                >
-                  <Linkedin className="w-3.5 h-3.5 text-[#0A66C2]" />
-                  <span>LinkedIn Profile</span>
-                </a>
-              </li>
-              <li>
-                <a
-                  href="https://github.com/nextframe-studio"
+                  href="https://github.com/boby-raj"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="hover:text-[#0F172A] transition-colors flex items-center gap-2"
                 >
                   <Github className="w-3.5 h-3.5 text-[#0F172A]" />
-                  <span>GitHub Studio</span>
+                  <span>github.com/boby-raj</span>
                 </a>
               </li>
             </ul>

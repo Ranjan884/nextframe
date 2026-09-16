@@ -1,6 +1,6 @@
 import React from 'react';
 import { TeamMember } from '../data/studioData';
-import { Github, Linkedin, Briefcase } from 'lucide-react';
+import { Github, Briefcase } from 'lucide-react';
 
 interface TeamCardProps {
   member: TeamMember;
@@ -10,7 +10,7 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
   return (
     <div className="rounded-2xl bg-[#141822] border border-[#222838] p-6 sm:p-8 flex flex-col justify-between shadow-lg hover:border-[#2E384D] hover:shadow-xl transition-all duration-300">
       <div>
-        {/* Top: Avatar Slot or Real Photo */}
+        {/* Top: Avatar or Real Photo */}
         <div className="flex items-start justify-between gap-4 mb-6">
           <div className="relative">
             {member.photoUrl ? (
@@ -93,17 +93,6 @@ export const TeamCard: React.FC<TeamCardProps> = ({ member }) => {
               title="GitHub"
             >
               <Github className="w-3.5 h-3.5" />
-            </a>
-          )}
-          {member.linkedin && (
-            <a
-              href={member.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="p-2 rounded-lg bg-[#0D1017] hover:bg-[#1E2536] text-[#3B82F6] hover:text-[#60A5FA] border border-[#222838] transition-colors"
-              title="LinkedIn"
-            >
-              <Linkedin className="w-3.5 h-3.5" />
             </a>
           )}
           {member.freelancer && (

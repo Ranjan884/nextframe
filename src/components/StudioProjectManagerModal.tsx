@@ -28,8 +28,6 @@ const CATEGORIES = [
   'Full-Stack Development',
   'App Development',
   'UI/UX Design',
-  'Video Editing',
-  '2D/3D Design',
   'Game Development',
 ];
 
@@ -371,7 +369,7 @@ export const StudioProjectManagerModal: React.FC<StudioProjectManagerModalProps>
                   required
                   value={title}
                   onChange={(e) => setTitle(e.target.value)}
-                  placeholder="e.g. AquaTrack, Kinematic 3D Prototype..."
+                  placeholder="e.g. Modern Web Application, Open-Source Tool..."
                   className="w-full px-3.5 py-2.5 rounded-lg border border-[#CBD5E1] focus:border-[#2563EB] focus:ring-1 focus:ring-[#2563EB] text-sm text-[#0F172A] outline-none"
                 />
               </div>

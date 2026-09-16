@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { NextframeLogo } from './NextframeLogo';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, ArrowUpRight } from 'lucide-react';
 
 export const Navbar: React.FC = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -12,7 +12,7 @@ export const Navbar: React.FC = () => {
       setScrolled(window.scrollY > 15);
 
       const sections = ['home', 'about', 'services', 'projects', 'contact'];
-      const scrollPosition = window.scrollY + 100;
+      const scrollPosition = window.scrollY + 120;
 
       for (const sectionId of sections) {
         const el = document.getElementById(sectionId);
@@ -57,7 +57,7 @@ export const Navbar: React.FC = () => {
       className={`fixed top-0 left-0 right-0 z-40 transition-all duration-200 ${
         scrolled
           ? 'bg-white/95 backdrop-blur-md border-b border-[#E2E8F0] shadow-xs py-3.5'
-          : 'bg-white/80 backdrop-blur-sm border-b border-[#F1F5F9] py-4'
+          : 'bg-white/80 backdrop-blur-xs border-b border-[#F1F5F9] py-4'
       }`}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,14 +66,14 @@ export const Navbar: React.FC = () => {
           <a
             href="#home"
             onClick={(e) => handleLinkClick(e, '#home')}
-            className="flex items-center gap-2 group cursor-pointer focus:outline-none"
+            className="flex items-center gap-2 group cursor-pointer focus:outline-none transition-opacity hover:opacity-90"
             aria-label="Nextframe Studio Home"
           >
             <NextframeLogo size="md" lightMode={true} showSubtitle={false} />
           </a>
 
           {/* Center Links (Desktop) */}
-          <nav className="hidden md:flex items-center gap-1 sm:gap-2">
+          <nav className="hidden md:flex items-center gap-1 sm:gap-1.5 p-1 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0]/60">
             {navLinks.map((link) => {
               const isActive = activeSection === link.id;
               return (
@@ -81,10 +81,10 @@ export const Navbar: React.FC = () => {
                   key={link.label}
                   href={link.href}
                   onClick={(e) => handleLinkClick(e, link.href)}
-                  className={`px-3.5 py-1.5 rounded-lg text-sm font-medium transition-colors ${
+                  className={`px-3.5 py-1.5 rounded-lg text-xs sm:text-sm font-semibold transition-all duration-200 ${
                     isActive
-                      ? 'text-[#2563EB] bg-[#EFF6FF] font-semibold'
-                      : 'text-[#475569] hover:text-[#0F172A] hover:bg-[#F8FAFC]'
+                      ? 'text-[#2563EB] bg-white shadow-2xs'
+                      : 'text-[#475569] hover:text-[#0F172A] hover:bg-white/50'
                   }`}
                 >
                   {link.label}
@@ -94,57 +94,68 @@ export const Navbar: React.FC = () => {
           </nav>
 
           {/* Right Action (Desktop) */}
-          <div className="hidden md:flex items-center">
+          <div className="hidden md:flex items-center gap-3">
             <a
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
-              className="inline-flex items-center justify-center px-4 py-2 rounded-lg text-sm font-semibold text-white bg-[#0F172A] hover:bg-[#1E293B] transition-colors shadow-xs"
+              className="inline-flex items-center justify-center gap-1.5 px-4 py-2 rounded-lg text-xs sm:text-sm font-semibold text-white bg-[#0F172A] hover:bg-[#2563EB] active:scale-[0.98] transition-all duration-200 shadow-2xs group"
             >
-              Hire Us
+              <span>Hire Us</span>
+              <ArrowUpRight className="w-3.5 h-3.5 text-white/70 group-hover:text-white transition-colors" />
             </a>
           </div>
 
-          {/* Mobile Menu Button */}
+          {/* Mobile Menu Controls */}
           <div className="flex md:hidden items-center gap-2">
             <a
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
-              className="px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-[#0F172A]"
+              className="px-3 py-1.5 rounded-lg text-xs font-semibold text-white bg-[#0F172A] hover:bg-[#2563EB] transition-colors"
             >
               Hire Us
             </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2 rounded-lg text-[#0F172A] hover:bg-[#F1F5F9] transition-colors"
+              className="p-2 rounded-lg text-[#0F172A] hover:bg-[#F1F5F9] transition-colors focus:outline-none"
               aria-label="Toggle navigation menu"
+              aria-expanded={mobileMenuOpen}
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5 text-[#0F172A]" />}
             </button>
           </div>
         </div>
       </div>
 
-      {/* Mobile Drawer */}
+      {/* Mobile Navigation Drawer */}
       {mobileMenuOpen && (
-        <div className="md:hidden border-b border-[#E2E8F0] bg-white px-4 pt-2 pb-5 space-y-1 shadow-lg animate-in slide-in-from-top-1 duration-150">
-          {navLinks.map((link) => (
-            <a
-              key={link.label}
-              href={link.href}
-              onClick={(e) => handleLinkClick(e, link.href)}
-              className="block px-3.5 py-2.5 rounded-lg text-base font-medium text-[#475569] hover:text-[#0F172A] hover:bg-[#F8FAFC] transition-colors"
-            >
-              {link.label}
-            </a>
-          ))}
-          <div className="pt-2">
+        <div className="md:hidden border-b border-[#E2E8F0] bg-white px-4 pt-3 pb-5 space-y-1 shadow-md animate-in slide-in-from-top-1 duration-150">
+          {navLinks.map((link) => {
+            const isActive = activeSection === link.id;
+            return (
+              <a
+                key={link.label}
+                href={link.href}
+                onClick={(e) => handleLinkClick(e, link.href)}
+                className={`flex items-center justify-between px-3.5 py-2.5 rounded-lg text-sm font-semibold transition-colors ${
+                  isActive
+                    ? 'text-[#2563EB] bg-[#EFF6FF]'
+                    : 'text-[#475569] hover:text-[#0F172A] hover:bg-[#F8FAFC]'
+                }`}
+              >
+                <span>{link.label}</span>
+                {isActive && <span className="w-1.5 h-1.5 rounded-full bg-[#2563EB]" />}
+              </a>
+            );
+          })}
+          <div className="pt-3 border-t border-[#F1F5F9]">
             <a
               href="#contact"
               onClick={(e) => handleLinkClick(e, '#contact')}
-              className="block w-full text-center px-4 py-2.5 rounded-lg text-sm font-semibold text-white bg-[#0F172A] hover:bg-[#1E293B] transition-colors"
+              className="flex items-center justify-center gap-1.5 w-full text-center px-4 py-2.5 rounded-lg text-sm font-semibold text-white bg-[#0F172A] hover:bg-[#2563EB] active:scale-[0.98] transition-all"
             >
-              Get in Touch
+              <span>Get in Touch</span>
+              <ArrowUpRight className="w-4 h-4" />
             </a>
           </div>
         </div>

@@ -10,7 +10,7 @@ import { ProjectCard } from './ProjectCard';
 import { ProjectDetailModal } from './ProjectDetailModal';
 import { StudioProjectManagerModal } from './StudioProjectManagerModal';
 import { StudioAuthModal } from './StudioAuthModal';
-import { Plus, Settings, LogOut, Lock } from 'lucide-react';
+import { Plus, Settings, LogOut } from 'lucide-react';
 
 export const WorkSection: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<string>('All');
@@ -63,8 +63,6 @@ export const WorkSection: React.FC = () => {
     'Web Development',
     'Full-Stack Development',
     'Game Development',
-    '2D/3D Design',
-    'Video Editing',
   ];
 
   const displayedProjects = allProjects.filter((project) => {
@@ -79,8 +77,6 @@ export const WorkSection: React.FC = () => {
     if (filter.includes('web')) return cat.includes('web');
     if (filter.includes('full-stack')) return cat.includes('full-stack') || cat.includes('stack');
     if (filter.includes('game')) return cat.includes('game') || cat.includes('unity');
-    if (filter.includes('3d')) return cat.includes('3d') || cat.includes('design');
-    if (filter.includes('video')) return cat.includes('video') || cat.includes('motion');
 
     return cat.includes(filter);
   });
@@ -91,48 +87,12 @@ export const WorkSection: React.FC = () => {
   };
 
   return (
-    <section id="projects" className="py-20 sm:py-28 bg-white border-b border-[#E2E8F0]">
+    <section id="projects" className="py-12 sm:py-16 bg-white border-b border-[#E2E8F0]">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-12 gap-6">
-          <div>
-            <span className="text-xs font-semibold text-[#2563EB] tracking-wider uppercase block mb-2">
-              Featured Work
-            </span>
-            <h2 className="text-2xl sm:text-4xl font-extrabold text-[#0F172A] tracking-tight">
-              Selected Projects
-            </h2>
-            <p className="mt-3 text-base text-[#525F7F] max-w-xl">
-              A curated selection of real websites, gameplay systems, 3D assets, and media produced by Nextframe Studio.
-            </p>
-          </div>
-
-          {/* Category Filter Tabs */}
-          <div className="flex flex-wrap items-center gap-1.5 p-1 rounded-xl bg-[#F8FAFC] border border-[#E2E8F0] self-start md:self-end">
-            {categories.map((cat) => {
-              const isActive = activeCategory === cat;
-              return (
-                <button
-                  key={cat}
-                  type="button"
-                  onClick={() => setActiveCategory(cat)}
-                  className={`px-3 py-1.5 rounded-lg text-xs font-semibold transition-colors cursor-pointer ${
-                    isActive
-                      ? 'bg-[#0F172A] text-white'
-                      : 'text-[#64748B] hover:text-[#0F172A] hover:bg-[#EDF2F7]'
-                  }`}
-                >
-                  {cat}
-                </button>
-              );
-            })}
-          </div>
-        </div>
-
         {/* Protected Admin Bar (Visible ONLY when logged in as admin) */}
         {isAdmin && (
-          <div className="mb-8 p-4 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
+          <div className="mb-6 p-4 rounded-xl bg-[#EFF6FF] border border-[#BFDBFE] flex flex-col sm:flex-row sm:items-center justify-between gap-3 text-xs">
             <div className="flex items-center gap-2">
               <span className="w-2 h-2 rounded-full bg-blue-600 animate-pulse" />
               <span className="font-bold text-[#1E3A8A]">
@@ -151,7 +111,7 @@ export const WorkSection: React.FC = () => {
                   setEditingProject(null);
                   setIsManagerOpen(true);
                 }}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#2563EB] text-white font-semibold hover:bg-[#1D4ED8] transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-[#2563EB] text-white font-semibold hover:bg-[#1D4ED8] transition-colors cursor-pointer"
               >
                 <Plus className="w-3.5 h-3.5" />
                 <span>Add Project</span>
@@ -163,7 +123,7 @@ export const WorkSection: React.FC = () => {
                   setEditingProject(null);
                   setIsManagerOpen(true);
                 }}
-                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#BFDBFE] text-[#1E3A8A] font-semibold hover:bg-blue-50 transition-colors"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-white border border-[#BFDBFE] text-[#1E3A8A] font-semibold hover:bg-blue-50 transition-colors cursor-pointer"
               >
                 <Settings className="w-3.5 h-3.5" />
                 <span>Manage ({allProjects.length})</span>
@@ -176,7 +136,7 @@ export const WorkSection: React.FC = () => {
                   setIsAdmin(false);
                   loadData();
                 }}
-                className="p-1.5 rounded-lg text-[#64748B] hover:text-[#0F172A] hover:bg-white"
+                className="p-1.5 rounded-lg text-[#64748B] hover:text-[#0F172A] hover:bg-white cursor-pointer"
                 title="Exit Admin"
               >
                 <LogOut className="w-4 h-4" />
@@ -185,22 +145,72 @@ export const WorkSection: React.FC = () => {
           </div>
         )}
 
-        {/* Clean Project Grid (2 columns for high visual clarity, matching human studio layouts) */}
+        {/* Sleek Category Filter Tabs - Starting directly at top of Projects */}
+        <div className="flex items-center justify-start overflow-x-auto pb-2 scrollbar-none gap-2">
+          {categories.map((cat) => {
+            const isActive = activeCategory === cat;
+            return (
+              <button
+                key={cat}
+                type="button"
+                onClick={() => setActiveCategory(cat)}
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold transition-all duration-200 cursor-pointer whitespace-nowrap ${
+                  isActive
+                    ? 'bg-[#0F172A] text-white shadow-xs'
+                    : 'bg-[#F8FAFC] text-[#64748B] hover:text-[#0F172A] hover:bg-[#EDF2F7] border border-[#E2E8F0]'
+                }`}
+              >
+                {cat}
+              </button>
+            );
+          })}
+        </div>
+
+        {/* Clean Project Grid (2 columns for maximum visual focus) */}
         {displayedProjects.length === 0 ? (
-          <div className="py-16 text-center rounded-2xl border border-dashed border-[#E2E8F0] p-8 text-[#64748B]">
-            <p className="text-sm font-medium">
-              No projects found in this category.
+          <div className="py-14 sm:py-16 text-center rounded-2xl border border-dashed border-[#CBD5E1] bg-[#F8FAFC] p-8 text-[#64748B] mt-6">
+            <p className="text-base font-semibold text-[#0F172A] mb-1">
+              {allProjects.length === 0 ? 'Portfolio Updates in Progress' : 'No projects found in this category.'}
             </p>
-            <button
-              type="button"
-              onClick={() => setActiveCategory('All')}
-              className="mt-3 px-4 py-2 rounded-lg bg-[#0F172A] text-white text-xs font-semibold"
-            >
-              Show All Projects
-            </button>
+            <p className="text-xs sm:text-sm text-[#64748B] max-w-md mx-auto mb-5 leading-relaxed">
+              {allProjects.length === 0
+                ? 'Selected project case studies are being updated. In the meantime, explore our active repositories on GitHub or log in to manage studio projects.'
+                : 'Try selecting another category filter or view all projects.'}
+            </p>
+            <div className="flex flex-wrap items-center justify-center gap-3">
+              {allProjects.length === 0 ? (
+                <>
+                  <a
+                    href="https://github.com/boby-raj"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-[#0F172A] text-white text-xs font-semibold hover:bg-[#1E293B] transition-colors cursor-pointer"
+                  >
+                    View GitHub Repositories ↗
+                  </a>
+                  {!isAdmin && (
+                    <button
+                      type="button"
+                      onClick={() => setIsAuthOpen(true)}
+                      className="px-4 py-2 rounded-lg bg-white border border-[#CBD5E1] text-[#0F172A] text-xs font-semibold hover:bg-[#F1F5F9] transition-colors cursor-pointer"
+                    >
+                      Studio Access
+                    </button>
+                  )}
+                </>
+              ) : (
+                <button
+                  type="button"
+                  onClick={() => setActiveCategory('All')}
+                  className="px-4 py-2 rounded-lg bg-[#0F172A] text-white text-xs font-semibold hover:bg-[#1E293B] transition-colors cursor-pointer"
+                >
+                  Show All Projects
+                </button>
+              )}
+            </div>
           </div>
         ) : (
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-7 sm:gap-8 mt-6 sm:mt-8">
             {displayedProjects.map((project) => (
               <ProjectCard
                 key={project.id}

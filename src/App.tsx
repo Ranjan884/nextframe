@@ -27,7 +27,7 @@ export default function App() {
         {/* 4. Projects Section (Primary Focus & Protected Management) */}
         <WorkSection />
 
-        {/* 5. Contact Section (WhatsApp, Email, LinkedIn, GitHub) */}
+        {/* 5. Contact Section (Email, GitHub) */}
         <ContactSection />
       </main>
 

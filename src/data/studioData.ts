@@ -37,7 +37,6 @@ export interface TeamMember {
   coreTools: string[];
   keyStrengths: string[];
   github?: string;
-  linkedin?: string;
   freelancer?: string;
 }
 
@@ -68,14 +67,11 @@ export const STUDIO_INFO = {
   status: 'Open for Freelance Projects',
   location: 'Remote Studio · Available Worldwide',
   
-  // Contact Placeholders (easily replaceable)
+  // Contact Channels
   contact: {
-    email: 'hello@nextframe.studio',
-    whatsapp: '+1 (000) 000-0000',
-    whatsappClean: '10000000000',
+    email: 'r40993674@gmail.com',
+    githubUrl: 'https://github.com/boby-raj',
     freelancerUrl: 'https://www.freelancer.com/u/nextframe',
-    linkedinUrl: 'https://www.linkedin.com/company/nextframe-studio',
-    githubUrl: 'https://github.com/nextframe-studio',
     instagramUrl: 'https://instagram.com/nextframe.studio',
   },
 };
@@ -87,128 +83,15 @@ export const STUDIO_FACTS = [
   },
   {
     label: 'Development + Design',
-    detail: 'Code, 3D, Motion & Logic',
+    detail: 'Code, UI/UX, Interface & Logic',
   },
   {
     label: 'Open for Projects',
-    detail: 'Websites, Apps, 3D & Games',
+    detail: 'Websites, Apps, APIs & Games',
   },
 ];
 
-export const PROJECTS: Project[] = [
-  {
-    id: 'aquatrack',
-    title: 'AQUATRACK',
-    category: 'Web Development / UI Design',
-    categoryLabel: 'Web & Interface Design',
-    status: 'Personal Project',
-    year: '2025',
-    summary:
-      'A water-awareness platform designed to help users understand and track water consumption through an interactive digital experience.',
-    description:
-      'AquaTrack was conceptualized as a clean, civic-utility digital platform. It transforms abstract water consumption metrics into practical everyday telemetry—such as shower durations, domestic leak evaluations, and conservation benchmarks—paired with intuitive visual meters.',
-    tags: ['Web Development', 'UI Design', 'React', 'Data Visualizer', 'Clean UI'],
-    tools: ['React', 'TypeScript', 'Tailwind CSS', 'Figma', 'Interactive Charts'],
-    keyFeatures: [
-      'Interactive domestic water usage calculator and estimation engine',
-      'Daily and monthly consumption visual benchmarking graphs',
-      'Diagnostic quiz for household fixtures and potential water leaks',
-      'Responsive, high-contrast interface designed for quick mobile tracking',
-    ],
-    technicalOverview:
-      'Architected with clean React state management and lightweight visual components. Employs SVG gauges and responsive CSS layout systems for instant client-side calculations with zero lag.',
-    role: 'Frontend Engineering, UI Architecture & Interface Design',
-    previewColor: {
-      accent: '#0066FF',
-      bg: '#f0f7ff',
-      badge: '#dbeafe',
-    },
-  },
-  {
-    id: 'game-development',
-    title: 'GAME DEVELOPMENT',
-    category: 'Unity / C# / 2D & 3D',
-    categoryLabel: 'Interactive Game Prototype',
-    status: 'In Development',
-    year: '2025',
-    summary:
-      'Interactive game experiences developed with gameplay systems, creative mechanics, and custom visual assets.',
-    description:
-      'Prototyping responsive gameplay systems in Unity with C#, focusing on tight character controls, physics interactions, modular game states, and custom low-poly visual assets crafted in Blender.',
-    tags: ['Unity', 'C#', '2D & 3D', 'Physics Systems', 'Custom Assets'],
-    tools: ['Unity Engine', 'C#', 'Blender', 'ProBuilder', 'Visual Studio'],
-    keyFeatures: [
-      'Responsive kinematic player controller with multi-directional physics movement',
-      'Modular state-machine architecture for game loops and enemy awareness',
-      'Custom 3D environmental props and lighting setups built from scratch',
-      'Interactive UI HUD with smooth health, stamina, and objective tracking',
-    ],
-    technicalOverview:
-      'Written in clean, decoupled C# scripts adhering to component-based architecture and ScriptableObject data containers for easy parameter tuning.',
-    role: 'Gameplay Programming, Systems Logic & 3D Asset Integration',
-    previewColor: {
-      accent: '#10b981',
-      bg: '#f0fdf4',
-      badge: '#dcfce7',
-    },
-  },
-  {
-    id: 'web-experiences',
-    title: 'WEB EXPERIENCES',
-    category: 'Frontend / Full-Stack Development',
-    categoryLabel: 'Interactive Web Platforms',
-    status: 'Personal Project',
-    year: '2024 - 2025',
-    summary:
-      'Modern responsive websites and web experiences focused on clean interfaces and smooth interactions.',
-    description:
-      'A collection of crafted frontend web solutions exploring modern layouts, kinetic typographic hierarchy, interactive canvas math, and responsive design systems that load instantly across all devices.',
-    tags: ['Frontend', 'Full-Stack', 'TypeScript', 'Responsive', 'Performance'],
-    tools: ['React', 'TypeScript', 'Tailwind CSS', 'Vite', 'HTML5 Canvas', 'REST APIs'],
-    keyFeatures: [
-      'Fluid, mathematical grid layouts responsive from mobile screens to 4K displays',
-      'Subtle, hardware-accelerated interactive canvas visuals responding to user input',
-      'Accessible semantic structure with zero layout shifts or unnecessary bloat',
-      'High-contrast typography tuned for effortless readability and scanning',
-    ],
-    technicalOverview:
-      'Built using modern Vite and TypeScript toolchains with modular component structures, optimized asset bundling, and clean separation of concerns.',
-    role: 'Creative Frontend Development, UI/UX Engineering & Performance',
-    previewColor: {
-      accent: '#6366f1',
-      bg: '#f5f3ff',
-      badge: '#ede9fe',
-    },
-  },
-  {
-    id: '3d-motion',
-    title: '3D & MOTION',
-    category: 'Blender / Photoshop / Video Editing',
-    categoryLabel: 'Visual Assets & Video',
-    status: 'Selected Work',
-    year: '2024 - 2025',
-    summary:
-      '3D assets, motion visuals, edited videos, and creative digital content.',
-    description:
-      'Visual production work spanning hard-surface 3D models, clean product compositions, dynamic video edits with precise rhythm and pacing, and high-impact digital graphics.',
-    tags: ['Blender', 'Photoshop', 'Video Editing', 'Motion Graphics', 'Visual Design'],
-    tools: ['Blender', 'Adobe Photoshop', 'Premiere Pro', 'After Effects'],
-    keyFeatures: [
-      'Hard-surface 3D geometric modeling with clean topology and studio lighting',
-      'Custom procedural shaders for realistic surface finishes and metallic reflections',
-      'Dynamic video cutting, pace alignment, and synchronized sound design',
-      'Sharp promotional graphic compositions and digital asset exports',
-    ],
-    technicalOverview:
-      'Rendered in Blender Cycles and EEVEE with optimized light paths; video assets edited in Premiere Pro with customized color curves and audio mastering.',
-    role: '3D Modeling, Texturing, Lighting, Video Editing & Motion Graphics',
-    previewColor: {
-      accent: '#8b5cf6',
-      bg: '#faf5ff',
-      badge: '#f3e8ff',
-    },
-  },
-];
+export const PROJECTS: Project[] = [];
 
 export const SERVICES: ServiceItem[] = [
   {
@@ -255,48 +138,34 @@ export const SERVICES: ServiceItem[] = [
   },
   {
     number: '04',
-    title: 'Video Editing',
-    tagline: 'Clean video editing, creative cuts, and visual storytelling.',
+    title: 'API & Cloud Architecture',
+    tagline: 'Scalable serverless backends, secure APIs, and cloud services.',
     description:
-      'Engaging video production focused on clean pacing, creative transitions, rhythmic audio synchronization, and visual storytelling that commands attention.',
+      'Connecting intuitive user interfaces with robust backend APIs, cloud databases, structured data handling, and third-party services.',
     deliverables: [
-      'Product & Showcase Video Reels',
-      'YouTube & Social Media Content Editing',
-      'Audio Synchronization & Sound Design',
-      'Color Correction & Final Export Delivery',
+      'REST API Endpoints & Architecture',
+      'Database Modeling & Cloud Storage',
+      'Cloud Deployment & Environment Config',
+      'Third-Party API & Webhook Integrations',
     ],
-    techStack: ['Adobe Premiere Pro', 'After Effects', 'DaVinci Resolve', 'Audition'],
+    techStack: ['Node.js', 'Express', 'TypeScript', 'Cloud Databases'],
   },
   {
     number: '05',
-    title: '3D & 2D Design',
-    tagline: 'Digital assets, 3D elements, compositions, and design work.',
-    description:
-      'Crafting custom 3D models, digital props, graphic compositions, and 2D design elements that give your brand and digital products an authentic, distinctive visual edge.',
-    deliverables: [
-      'Custom 3D Models & Props',
-      'Realistic Studio Lighting & Materials',
-      '2D Graphic Compositions & Banners',
-      'Optimized Assets for Web & Games',
-    ],
-    techStack: ['Blender', 'Adobe Photoshop', 'Illustrator', 'glTF/GLB'],
-  },
-  {
-    number: '06',
     title: 'Game Development',
     tagline: '2D and 3D interactive experiences using Unity and C#.',
     description:
-      'Building playable game prototypes and interactive experiences in Unity with robust gameplay mechanics, responsive character controllers, physics, and custom assets.',
+      'Building playable game prototypes and interactive experiences in Unity with robust gameplay mechanics, responsive character controllers, physics, and custom state loops.',
     deliverables: [
       'Core Gameplay Systems & Logic',
       'Kinematic Character Controllers',
       'Physics Interactions & Mechanics',
       'In-Game UI, HUDs & Audio Hooks',
     ],
-    techStack: ['Unity Engine', 'C#', 'Blender', 'ProBuilder'],
+    techStack: ['Unity Engine', 'C#', 'ProBuilder', 'Visual Studio'],
   },
   {
-    number: '07',
+    number: '06',
     title: 'UI/UX Design',
     tagline: 'Clean, practical, and visually engaging user interfaces.',
     description:
@@ -316,56 +185,52 @@ export const TEAM_MEMBERS: TeamMember[] = [
     id: 'ranjan',
     name: 'Ranjan',
     rolesDisplay:
-      'Web Developer · Full-Stack Developer · App Developer · Video Editor · 3D/2D Designer · Game Developer',
+      'Web Developer · Full-Stack Developer · App Developer · Game Developer',
     disciplines: [
       'Web Development',
       'Full-Stack',
       'App Development',
-      'Video Editing',
-      '3D/2D Design',
       'Game Development',
     ],
     shortBio:
-      'Engineering student and developer combining full-stack programming with 3D design, mobile apps, and video editing.',
+      'Engineering student and developer combining full-stack programming with responsive interfaces, mobile apps, and game systems.',
     fullBio:
-      'Ranjan is an engineering student and versatile developer who builds across web, mobile, and digital media. He focuses on clean code structure, modern web platforms, app interfaces, custom 3D elements, and video editing. Passionate about solving technical challenges while maintaining high visual standards.',
+      'Ranjan is an engineering student and versatile developer who builds across web, mobile, and interactive systems. He focuses on clean code structure, modern web platforms, app interfaces, and game mechanics. Passionate about solving technical challenges while maintaining high visual standards.',
     avatarInitials: 'R',
-    coreTools: ['React', 'TypeScript', 'Node.js', 'Unity', 'C#', 'Blender', 'Premiere Pro', 'Photoshop'],
+    coreTools: ['React', 'TypeScript', 'Node.js', 'Unity', 'C#', 'Tailwind CSS'],
     keyStrengths: [
       'Full-Stack Web & App Architecture',
       'Clean Code & Component Modularity',
-      '3D Prop Modeling & Lighting',
-      'Video Rhythm & Visual Storytelling',
+      'Unity Gameplay Mechanics',
+      'API & Cloud Integrations',
     ],
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
+    github: 'https://github.com/boby-raj',
     freelancer: 'https://freelancer.com',
   },
   {
     id: 'mohmed-sami',
     name: 'Mohmed Sami',
     rolesDisplay:
-      'Web Developer · Video Editor · 3D/2D Designer · Game Developer',
+      'UI/UX Designer · Creative Director · Frontend Systems',
     disciplines: [
+      'UI/UX Design',
+      'Creative Direction',
+      'Design Systems',
       'Web Development',
-      'Video Editing',
-      '3D/2D Design',
-      'Game Development',
     ],
     shortBio:
-      'Engineering student and creator focused on responsive web development, Unity game mechanics, and motion content.',
+      'Engineering student and creator focused on UI/UX design systems, responsive web development, and intuitive interfaces.',
     fullBio:
-      'Mohmed Sami is an engineering student with a strong focus on interactive web experiences, Unity gameplay programming, and creative multimedia. He brings technical curiosity to game development with C#, frontend web engineering, and motion design.',
+      'Mohmed Sami is an engineering student with a strong focus on interactive user experiences, frontend web engineering, and digital interfaces. He brings aesthetic precision to design systems, user flows, and typography.',
     avatarInitials: 'MS',
-    coreTools: ['React', 'TypeScript', 'Tailwind CSS', 'Unity', 'C#', 'Blender', 'Photoshop', 'After Effects'],
+    coreTools: ['Figma', 'React', 'TypeScript', 'Tailwind CSS'],
     keyStrengths: [
       'Frontend Interaction Engineering',
-      'Unity C# Gameplay Mechanics',
-      'Visual Asset Creation & 3D Layout',
-      'Motion Design & Creative Video Cuts',
+      'UI/UX Design Systems & Layout',
+      'User Flows & Information Architecture',
+      'Visual Consistency & Brand Identity',
     ],
-    github: 'https://github.com',
-    linkedin: 'https://linkedin.com',
+    github: 'https://github.com/boby-raj',
     freelancer: 'https://freelancer.com',
   },
 ];
